@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'pry'
+
 class Person
   attr_accessor :name, :age
   attr_reader :id
@@ -21,3 +23,5 @@ class Person
     @age >= 18
   end
 end
+
+binding.pry
