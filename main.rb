@@ -7,6 +7,7 @@ class App
     @classroom = Classroom.new('Microverse')
     @active = true
     @people_list = []
+    @books = []
   end
 
   def options
@@ -30,6 +31,8 @@ class App
       display_people_list
     when '3'
       create_person
+    when '4'
+      create_book
     when '7'
       @active = false
       puts 'Thank you for using this app!'

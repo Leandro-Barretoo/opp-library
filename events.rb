@@ -1,5 +1,6 @@
 require_relative './student'
 require_relative './teacher'
+require_relative './book'
 
 module Events
   def create_student
@@ -46,5 +47,15 @@ module Events
       obj = enum.create_array_instance
       puts "[#{obj[:mainclass]}] Name: #{obj[:name]}, ID: #{obj[:id]}, Age: #{obj[:age]}"
     end
+  end
+
+  def create_book
+    puts 'Title:'
+    mytitle = gets.chomp
+    puts 'Author:'
+    myauthor = gets.chomp
+    book = Book.new(mytitle, myauthor)
+    @books.push(book)
+    puts 'Book created successfully'
   end
 end
