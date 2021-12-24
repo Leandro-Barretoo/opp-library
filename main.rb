@@ -1,3 +1,5 @@
+# rubocop:disable Metrics/CyclomaticComplexity
+
 require_relative './events'
 require_relative './classroom'
 
@@ -22,7 +24,7 @@ class App
       '7' => 'Exit'
     }
     puts 'Please choose an option by enterin a number:'
-    available.each { |key,value| puts "#{key} - #{value}"}
+    available.each { |key, value| puts "#{key} - #{value}" }
   end
 
   def handle_number
@@ -49,7 +51,7 @@ class App
   def run
     puts 'Welcome to School LIbrary App!'
     puts ''
-    while @active do
+    while @active
       options
       handle_number
     end
@@ -62,3 +64,5 @@ def main
 end
 
 main
+
+# rubocop:enable Metrics/CyclomaticComplexity

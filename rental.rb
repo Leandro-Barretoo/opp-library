@@ -15,11 +15,11 @@ class Rental
     id = @person.create_array_instance[:id]
     book_title = @book.create_array_instance[:title]
     book_author = @book.create_array_instance[:author]
-    myobj = {
-      :id => id,
-      :date => @date,
-      :bk_title => book_title,
-      :bk_author => book_author
+    {
+      id: id,
+      date: @date,
+      bk_title: book_title,
+      bk_author: book_author
     }
   end
 end

@@ -11,9 +11,10 @@ module Events
     myname = gets.chomp
     puts 'Has parent permission? [Y/N]:'
     mypermission = gets.chomp
-    if mypermission == 'y' || mypermission == 'Y'
+    case mypermission
+    when 'y', 'Y'
       mypermission = true
-    elsif mypermission == 'n' || mypermission == 'N'
+    when 'n', 'N'
       mypermission = false
     end
     student = Student.new(@classroom, myage, myname, parent_permission: mypermission)
@@ -96,9 +97,7 @@ module Events
     puts 'Rentals:'
     @rentals.each do |enum|
       obj = enum.rental_info
-      if obj[:id] == wantedid
-        puts "Date: #{obj[:date]}, Book \"#{obj[:bk_title]}\" by #{obj[:bk_author]}"
-      end
+      puts "Date: #{obj[:date]}, Book \"#{obj[:bk_title]}\" by #{obj[:bk_author]}" if obj[:id] == wantedid
     end
   end
 end

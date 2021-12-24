@@ -12,6 +12,6 @@ class Teacher < Person
   end
 
   def create_array_instance
-    myobj = {:mainclass => @mainclass, :name => @name, :id => @id, :age => @age}
+    { mainclass: @mainclass, name: @name, id: @id, age: @age }
   end
 end

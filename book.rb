@@ -9,6 +9,6 @@ class Book
   end
 
   def create_array_instance
-    myobj = {:title => @title, :author => @author}
+    { title: @title, author: @author }
   end
 end
