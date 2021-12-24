@@ -1,4 +1,13 @@
+require_relative './events'
+require_relative './classroom'
+
 class App
+  include Events
+  def initialize
+    @classroom = Classroom.new('Microverse')
+    @active = true
+  end
+  
   def options
     available = {
       '1' => 'List all books',
@@ -16,7 +25,10 @@ class App
   def run
     puts 'Welcome to School LIbrary App!'
     puts ''
-    options
+    while @active do
+      options
+      handle_number
+    end
   end
 end
 
