@@ -15,7 +15,7 @@ Object Oriented Programming built with Ruby to run in the terminal
 To get a local copy up and running follow these simple example steps in your terminal.
 
 - `git clone https://github.com/Leandro-Barretoo/opp-library`
-- `cd tic-tac-toe`
+- `cd opp-library`
 - `ruby main.rb`
 
 ## Instructions
