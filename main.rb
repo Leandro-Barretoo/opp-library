@@ -6,6 +6,7 @@ class App
   def initialize
     @classroom = Classroom.new('Microverse')
     @active = true
+    @people_list = []
   end
 
   def options
@@ -25,6 +26,8 @@ class App
   def handle_number
     choice = gets.chomp
     case choice
+    when '3'
+      create_person
     when '7'
       @active = false
       puts 'Thank you for using this app!'
