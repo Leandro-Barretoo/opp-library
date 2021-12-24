@@ -38,6 +38,8 @@ class App
       create_book
     when '5'
       create_rental
+    when '6'
+      find_rental
     when '7'
       @active = false
       puts 'Thank you for using this app!'

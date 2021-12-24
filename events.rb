@@ -89,4 +89,16 @@ module Events
     @rentals.push(rental)
     puts 'Rental created successfully'
   end
+
+  def find_rental
+    puts 'ID of person'
+    wantedid = gets.chomp.to_i
+    puts 'Rentals:'
+    @rentals.each do |enum|
+      obj = enum.rental_info
+      if obj[:id] == wantedid
+        puts "Date: #{obj[:date]}, Book \"#{obj[:bk_title]}\" by #{obj[:bk_author]}"
+      end
+    end
+  end
 end
