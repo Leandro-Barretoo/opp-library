@@ -8,6 +8,7 @@ class App
     @active = true
     @people_list = []
     @books = []
+    @rentals = []
   end
 
   def options
@@ -35,6 +36,8 @@ class App
       create_person
     when '4'
       create_book
+    when '5'
+      create_rental
     when '7'
       @active = false
       puts 'Thank you for using this app!'

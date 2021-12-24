@@ -1,6 +1,7 @@
 require_relative './student'
 require_relative './teacher'
 require_relative './book'
+require_relative './rental'
 
 module Events
   def create_student
@@ -64,5 +65,28 @@ module Events
       obj = enum.create_array_instance
       puts "Title: \"#{obj[:title]}\", Author: #{obj[:author]}"
     end
+  end
+
+  def create_rental
+    puts 'Select a book from the following list by number'
+    @books.each_with_index do |enum, idx|
+      obj = enum.create_array_instance
+      puts "#{idx}) Title: \"#{obj[:title]}\", Author: #{obj[:author]}"
+    end
+    book_choice = gets.chomp.to_i
+    puts ''
+    puts 'Select a person from the following list by number (not id)'
+    @people_list.each_with_index do |enum, idx|
+      obj = enum.create_array_instance
+      puts "#{idx}) [#{obj[:mainclass]}] Name: #{obj[:name]}, ID: #{obj[:id]}, Age: #{obj[:age]}"
+    end
+
+    people_choice = gets.chomp.to_i
+    puts ''
+    puts 'Date:'
+    mydate = gets.chomp
+    rental = Rental.new(mydate, @people_list[people_choice], @books[book_choice])
+    @rentals.push(rental)
+    puts 'Rental created successfully'
   end
 end
