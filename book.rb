@@ -7,4 +7,8 @@ class Book
     @author = author
     @rentals = []
   end
+
+  def create_array_instance
+    { title: @title, author: @author }
+  end
 end
