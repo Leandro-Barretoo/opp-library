@@ -58,4 +58,11 @@ module Events
     @books.push(book)
     puts 'Book created successfully'
   end
+
+  def display_books
+    @books.each do |enum|
+      obj = enum.create_array_instance
+      puts "Title: \"#{obj[:title]}\", Author: #{obj[:author]}"
+    end
+  end
 end
