@@ -7,7 +7,7 @@ class App
     @classroom = Classroom.new('Microverse')
     @active = true
   end
-  
+
   def options
     available = {
       '1' => 'List all books',
@@ -20,6 +20,15 @@ class App
     }
     puts 'Please choose an option by enterin a number:'
     available.each { |key,value| puts "#{key} - #{value}"}
+  end
+
+  def handle_number
+    choice = gets.chomp
+    case choice
+    when '7'
+      @active = false
+      puts 'Thank you for using this app!'
+    end
   end
 
   def run
