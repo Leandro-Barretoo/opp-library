@@ -40,4 +40,11 @@ module Events
     end
     puts 'Person created successfully'
   end
+
+  def display_people_list
+    @people_list.each do |enum|
+      obj = enum.create_array_instance
+      puts "[#{obj[:mainclass]}] Name: #{obj[:name]}, ID: #{obj[:id]}, Age: #{obj[:age]}"
+    end
+  end
 end

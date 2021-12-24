@@ -26,6 +26,8 @@ class App
   def handle_number
     choice = gets.chomp
     case choice
+    when '2'
+      display_people_list
     when '3'
       create_person
     when '7'
